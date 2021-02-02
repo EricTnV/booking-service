@@ -3,13 +3,13 @@
   "version": "1.0.0",
   "description": "",
   "keywords": [],
-  "homepage": "https://github.com/thefabfour/booking-service#readme",
+  "homepage": "https://github.com/EricTnV/booking-service.git#readme",
   "bugs": {
-    "url": "https://github.com/thefabfour/booking-service/issues"
+    "url": "https://github.com/EricTnV/booking-service.git/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/thefabfour/booking-service.git"
+    "url": "git+https://github.com/EricTnV/booking-service.git"
   },
   "license": "ISC",
   "author": "",
