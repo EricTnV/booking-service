@@ -1,7 +1,17 @@
-const mongoose = require('mongoose');
+// const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost:27017/calendar', { useNewUrlParser: true, useUnifiedTopology: true });
+// mongoose.connect('mongodb://localhost:27017/calendar', { useNewUrlParser: true, useUnifiedTopology: true });
 
-const db = mongoose.connection;
+// const db = mongoose.connection;
 
-module.exports = db;
+// module.exports = db;
+
+const { Sequelize } = require('sequelize');
+
+const sequelize = new Sequelize({
+  dialect: 'postgres',
+  username: 'admin',
+  database: 'mydb',
+});
+
+module.exports = sequelize;
