@@ -1,9 +1,10 @@
 const moment = require('moment');
-const { Booking } = require('../model');
+const db = require('../database/index');
+// const { Booking } = require('../model');
 
 const cal = (req, res) => {
   const calendarMonths = [];
-  const dateObject = moment();
+  const dateObject = moment('2021-01-01');
   for (let i = 0; i < 24; i += 1) {
     const firstDayOfMonth = () => {
       const firstDay = moment(dateObject).startOf('month').format('d');
@@ -29,9 +30,10 @@ const cal = (req, res) => {
   }
 
   const { propertyId } = req.params;
-  Booking.find({ propertyId })
+  // Booking.find({ propertyId })
+  db.query(`SELECT * from booking where propertyid=${propertyId}`)
     .then((data) => {
-      data.forEach(({ date }) => {
+      data[0].forEach(({ date }) => {
         const dateStart = moment(date.start, 'MM-DD-YYYY');
         const dateEnd = moment(date.end, 'MM-DD-YYYY');
 

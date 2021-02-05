@@ -23,7 +23,7 @@ export default function App() {
     price: null,
     cleaning: null,
     avg: null,
-    totalRev: null,
+    totalrev: null,
   });
 
   useEffect(() => {
@@ -88,7 +88,7 @@ export default function App() {
     <div className={classes.container}>
       {showCalendar ? <div className={classes.background} onClick={toggleHandler} aria-hidden="true" /> : null}
       <div className={classes.price}>
-        <PriceReview price={home.price} avg={home.avg} total={home.totalRev} />
+        <PriceReview price={home.price} avg={home.avg} total={home.totalrev} />
       </div>
       <div className={classes.earliest}>
         <Earliest date="Apr 13" />

@@ -1,4 +1,4 @@
-const Booking = require('./booking');
-const Property = require('./property');
+// const Booking = require('./booking');
+// const Property = require('./property');
 
-module.exports = { Booking, Property };
+// module.exports = { Booking, Property };

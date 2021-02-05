@@ -6,12 +6,12 @@ const path = require('path');
 
 const PUBLIC_DIR = path.resolve(__dirname, '../client/dist');
 const router = require('./router');
-const db = require('./database');
+// const db = require('./database');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-db.once('open', () => console.log('Connected to MongoDB'));
+// db.once('open', () => console.log('Connected to MongoDB'));
 
 app.use(cors());
 app.use(express.json());
