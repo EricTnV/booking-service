@@ -1,17 +1,15 @@
-// const mongoose = require('mongoose');
+const { Pool } = require('pg');
 
-// mongoose.connect('mongodb://localhost:27017/calendar', { useNewUrlParser: true, useUnifiedTopology: true });
-
-// const db = mongoose.connection;
-
-// module.exports = db;
-
-const { Sequelize } = require('sequelize');
-
-const sequelize = new Sequelize({
+const client = new Pool({
+  user: 'ubuntu',
+  password: 'ubuntu',
+  host: 'ec2-3-16-89-205.us-east-2.compute.amazonaws.com',
   dialect: 'postgres',
-  username: 'admin',
-  database: 'mydb',
+  database: 'postgres',
+  port: 5432,
+  max: 200,
 });
 
-module.exports = sequelize;
+client.connect();
+
+module.exports = client;

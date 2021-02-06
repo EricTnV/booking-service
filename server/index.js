@@ -1,6 +1,7 @@
 /* eslint-disable no-console */
+require('newrelic');
 const express = require('express');
-const cors = require('cors');
+// const cors = require('cors');
 const compression = require('compression');
 const path = require('path');
 
@@ -13,8 +14,8 @@ const PORT = process.env.PORT || 3001;
 
 // db.once('open', () => console.log('Connected to MongoDB'));
 
-app.use(cors());
-app.use(express.json());
+// app.use(cors());
+// app.use(express.json());
 app.use(compression());
 app.use(express.static(PUBLIC_DIR));
 

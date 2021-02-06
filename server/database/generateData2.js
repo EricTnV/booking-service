@@ -8,7 +8,6 @@ const filePath = path.join(__dirname, 'CSV');
 const ws = fs.createWriteStream(`${filePath}/bookings.csv`);
 ws.write('bookingid,propertyid,date\n', 'utf-8');
 let record;
-// let date = {};
 let start;
 let end;
 for (let i = 0; i < 2; i += 1) {

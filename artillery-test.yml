@@ -1,0 +1,10 @@
+config:
+  target: "http://localhost:3001"
+  phases:
+    - duration: 5
+      arrivalRate: 1000
+scenarios:
+  - flow:
+      - log: "New virtual user running"
+      - get:
+          url: "/?propertyId=5000000"

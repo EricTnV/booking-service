@@ -1,6 +1,5 @@
 const moment = require('moment');
 const db = require('../database/index');
-// const { Booking } = require('../model');
 
 const cal = (req, res) => {
   const calendarMonths = [];
@@ -30,10 +29,9 @@ const cal = (req, res) => {
   }
 
   const { propertyId } = req.params;
-  // Booking.find({ propertyId })
   db.query(`SELECT * from booking where propertyid=${propertyId}`)
     .then((data) => {
-      data[0].forEach(({ date }) => {
+      data.rows.forEach(({ date }) => {
         const dateStart = moment(date.start, 'MM-DD-YYYY');
         const dateEnd = moment(date.end, 'MM-DD-YYYY');
 
