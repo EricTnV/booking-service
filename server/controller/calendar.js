@@ -1,5 +1,5 @@
 const moment = require('moment');
-const db = require('../database/index');
+const { psqlClient } = require('../database/index');
 
 const cal = (req, res) => {
   const calendarMonths = [];
@@ -29,7 +29,7 @@ const cal = (req, res) => {
   }
 
   const { propertyId } = req.params;
-  db.query(`SELECT * from booking where propertyid=${propertyId}`)
+  psqlClient.query(`SELECT * from booking where propertyid=${propertyId}`)
     .then((data) => {
       data.rows.forEach(({ date }) => {
         const dateStart = moment(date.start, 'MM-DD-YYYY');
